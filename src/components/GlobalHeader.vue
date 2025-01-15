@@ -1,6 +1,6 @@
 <template>
   <div id="header">
-    <a-row style="margin-bottom: 16px">
+    <a-row style="margin-bottom: 16px" align="center">
       <a-col flex="auto">
         <a-menu
           mode="horizontal"
@@ -12,15 +12,15 @@
             :style="{ padding: 0, marginRight: '38px' }"
             disabled
           >
-            <div
-              :style="{
-                width: '80px',
-                height: '30px',
-                borderRadius: '2px',
-                background: 'var(--color-fill-3)',
-                cursor: 'text',
-              }"
-            />
+            <div class="title-bar">
+              <img src="../assets/logo.png" class="logo" />
+              <div class="title">
+                <a-row style="height: 30px; font-size: 22px">
+                  OJ在线判题系统
+                </a-row>
+                <a-row> Online Judge System</a-row>
+              </div>
+            </div>
           </a-menu-item>
           <a-menu-item v-for="item in routes" :key="item.path">
             {{ item.name }}
@@ -28,7 +28,7 @@
         </a-menu>
       </a-col>
       <a-col flex="100px">
-        <div>auto</div>
+        <div>{{ store.state.user?.loginUser?.userName ?? "未登录" }}</div>
       </a-col>
     </a-row>
   </div>
@@ -53,4 +53,19 @@ router.afterEach((to, from, failure) => {
 
 const selectKeys = ref(["/"]);
 </script>
-<style scoped></style>
+
+<style scoped>
+.title-bar {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  color: #444;
+  margin-left: 16px;
+}
+
+.logo {
+  height: 48px;
+}
+</style>
