@@ -1,11 +1,5 @@
-<script setup lang="ts">
+<script setup lang="ts"></script>
 
-</script>
+<template>12</template>
 
-<template>
-
-</template>
-
-<style scoped>
-
-</style>
+<style scoped></style>

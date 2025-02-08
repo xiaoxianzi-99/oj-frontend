@@ -1,13 +1,9 @@
-<script setup lang="ts">
-import GlobalHeader from "@/components/GlobalHeader.vue";
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div id="basicLayout">
+  <div id="userLayout">
     <a-layout style="min-height: 100vh">
-      <a-layout-header class="header">
-        <global-header />
-      </a-layout-header>
+      <a-layout-header class="header"></a-layout-header>
       <a-layout-content class="content">
         <router-view />
       </a-layout-content>
@@ -26,22 +22,23 @@ import GlobalHeader from "@/components/GlobalHeader.vue";
 </template>
 
 <style scoped>
-#basicLayout {
+#userLayout {
+  background: url("https://gw.alipayobjects.com/zos/rmsportal/FfdJeJRQWjEeGTpqgBKj.png")
+    no-repeat center center;
+  background-size: cover;
 }
 
-#basicLayout .header {
+#userLayout .header {
   margin-bottom: 16px;
   box-shadow: #eee 1px 1px 5px;
 }
 
-#basicLayout .content {
-  background: linear-gradient(to right, #fefefe, #fff);
+#userLayout .content {
   margin-bottom: 16px;
   padding: 20px;
 }
 
-#basicLayout .footer {
-  background: #efefef;
+#userLayout .footer {
   padding: 16px;
   position: sticky;
   bottom: 0;

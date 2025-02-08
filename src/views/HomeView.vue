@@ -1,11 +1,21 @@
 <template>
-  <div class="home"></div>
+  <div class="home">
+    <MdEditor :value="mdValue" :handle-change="onMdChange" />
+    <CodeEditor :value="codeValue" :handle-change="onCodeChange" />
+  </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
+import MdEditor from "@/components/MdEditor.vue";
+import { ref } from "vue";
+import CodeEditor from "@/components/CodeEditor.vue";
 
-export default defineComponent({
-  name: "HomeView",
-});
+const mdValue = ref();
+const codeValue = ref();
+const onMdChange = (v: string) => {
+  mdValue.value = v;
+};
+const onCodeChange = (v: string) => {
+  codeValue.value = v;
+};
 </script>
